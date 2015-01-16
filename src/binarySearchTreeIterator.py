@@ -5,8 +5,10 @@
 #         self.left = None
 #         self.right = None
 
+
 class BSTIterator:
     # @param root, a binary search tree's root node
+
     def __init__(self, root):
         self.stk = []
         self.pushLeft(root)
@@ -30,4 +32,3 @@ class BSTIterator:
 # Your BSTIterator will be called like this:
 # i, v = BSTIterator(root), []
 # while i.hasNext(): v.append(i.next())
-
