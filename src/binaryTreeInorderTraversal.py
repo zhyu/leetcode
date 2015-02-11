@@ -7,16 +7,21 @@
 
 
 class Solution:
-
-    def __init__(self):
-        self.inorder = []
-
     # @param root, a tree node
     # @return a list of integers
+
     def inorderTraversal(self, root):
         if root is None:
             return []
-        self.inorderTraversal(root.left)
-        self.inorder.append(root.val)
-        self.inorderTraversal(root.right)
-        return self.inorder
+        res = []
+        stk = []
+        p = root
+        while stk or p:
+            if p:
+                stk.append(p)
+                p = p.left
+            else:
+                q = stk.pop()
+                res.append(q.val)
+                p = q.right
+        return res
