@@ -6,10 +6,7 @@ class Solution:
     def isIsomorphic(self, s, t):
         d1 = {}
         d2 = {}
-        l = len(s)
-        for i in xrange(l):
-            if d1.setdefault(s[i], t[i]) != t[i]:
-                return False
-            if d2.setdefault(t[i], s[i]) != s[i]:
+        for i, j in zip(s, t):
+            if d1.setdefault(i, j) != j or d2.setdefault(j, i) != i:
                 return False
         return True
