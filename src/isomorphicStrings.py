@@ -6,7 +6,5 @@ class Solution:
     def isIsomorphic(self, s, t):
         d1 = {}
         d2 = {}
-        for i, j in zip(s, t):
-            if d1.setdefault(i, j) != j or d2.setdefault(j, i) != i:
-                return False
-        return True
+        return all(d1.setdefault(i, j) == j and d2.setdefault(j, i) == i
+                   for i, j in zip(s, t))
