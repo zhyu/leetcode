@@ -1,2 +1,2 @@
 # leetcode
-LeetCode Python and MySQL Solutions
+LeetCode Solutions
