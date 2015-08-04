@@ -8,9 +8,9 @@ class Solution:
         deg = {v: 0 for v in xrange(numCourses)}
         s = set(range(numCourses))
         for u, v in prerequisites:
-            g[u].append(v)
-            deg[v] += 1
-            s.discard(v)
+            g[v].append(u)
+            deg[u] += 1
+            s.discard(u)
         cnt = 0
         while s:
             cnt += 1
